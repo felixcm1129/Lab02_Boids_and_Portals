@@ -18,23 +18,4 @@ class Portal {
   void display(){
     ellipse(x, y, w, h);
   }
-  
-  void setPortal1(Portal _p)
-  {
-    p1 = _p;
-  }
-  
-  void setPortal2(Portal _p)
-  {
-    p2 = _p;
-  }
-  
-  Portal getP1(){
-    return p1;
-  }
-  
-  Portal getP2(){
-    return p2;
-  }
-  
 }
