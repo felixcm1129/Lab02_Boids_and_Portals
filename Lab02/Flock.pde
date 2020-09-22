@@ -1,6 +1,7 @@
 class Flock {
   ArrayList<Boid> boids; // An ArrayList for all the boids
   Boolean portal_display = false;
+  Boolean colliding = false;
   Portal p1;
   Portal p2;
   
@@ -51,6 +52,23 @@ class Flock {
 
     p1 = new Portal(random(0, width), random(0, height));
     p2 = new Portal(random(0, width), random(0, height));
+    
+    if(PortalColliding() == true){
+      println("collision");
+      p2 = new Portal(random(0, width), random(0, height));
+      colliding = false;
+    }
+  }
+  
+  Boolean PortalColliding(){
+  
+    float aB = sqrt(sq(p2.x - p1.x) + sq(p2.y - p1.y));
+    float rAB = 50;
+    if(aB <= rAB)
+    {
+      return colliding = true;
+    }  else return colliding = false;
+  
   }
   
   void display()
